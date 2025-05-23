@@ -13,7 +13,7 @@ npm install time-decorator
 ### Basic Example
 
 ```typescript
-import { time } from 'time-decorator';
+import { time } from 'ts-time-decorator';
 
 class Example {
     @time()

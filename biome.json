@@ -1,0 +1,27 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"files": {
+		"ignoreUnknown": true,
+		"ignore": [
+			"**/node_modules/**",
+			"**/dist/**",
+			"**/build/**",
+			"**/coverage/**",
+			"**/.git/**",
+			"**/.github/**",
+			"**/.idea/**",
+			"**/.vscode/**",
+			"**/.DS_Store",
+			".npmrc",
+			".yarnrc"
+		]
+	},
+	"linter": {
+		"rules": {
+			"complexity": {
+				"useArrowFunction": "off",
+				"noBannedTypes": "off"
+			}
+		}
+	}
+}

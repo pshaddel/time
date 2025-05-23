@@ -1,0 +1,40 @@
+name: Lint, Test, Build, and Conditionally Publish
+
+on:
+  push:
+    branches:
+        - '**''
+    tags:
+      - 'v*'  # only run when you push a tag like v1.0.0
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run lint & format check
+        run: npm run format-lint:check
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish to npm
+        if: startsWith(github.ref, 'refs/tags/v') && github.ref_name == 'v${{ github.ref_name }}' && github.event.base_ref == 'refs/heads/main'
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
