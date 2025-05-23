@@ -1,0 +1,33 @@
+{
+  "version": "0.0.1",
+  "name": "ts-time-decorator",
+  "description": "A TypeScript decorator for measuring the execution time of functions.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.11.29",
+    "@swc/jest": "^0.2.38",
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "keywords": [
+    "typescript",
+    "decorator",
+    "performance",
+    "benchmark",
+    "time"
+  ],
+  "author": "Poorshad Shaddel",
+  "type": "module",
+  "license": "MIT"
+}
