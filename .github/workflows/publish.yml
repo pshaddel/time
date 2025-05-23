@@ -3,7 +3,7 @@ name: Lint, Test, Build, and Conditionally Publish
 on:
   push:
     branches:
-        - '**''
+        - '**'
     tags:
       - 'v*'  # only run when you push a tag like v1.0.0
 

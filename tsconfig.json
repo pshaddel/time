@@ -8,7 +8,7 @@
 		"outDir": "./dist",
 		"moduleResolution": "nodenext",
 		"module": "NodeNext",
-		"strict": true
+		"strict": false
 	},
 	"files": ["./src/index.ts"]
 }
