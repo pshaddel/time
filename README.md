@@ -13,10 +13,10 @@ npm install time-decorator
 ### Basic Example
 
 ```typescript
-import { TimeDecorator } from 'time-decorator';
+import { time } from 'time-decorator';
 
 class Example {
-    @TimeDecorator()
+    @time()
     someMethod() {
         // Simulate a task
         for (let i = 0; i < 1e6; i++) {}
@@ -34,10 +34,10 @@ This will log the execution time of `someMethod` to the console.
 You can provide a custom logger function to handle the execution time:
 
 ```typescript
-import { TimeDecorator } from 'time-decorator';
+import { time } from 'time-decorator';
 
 class Example {
-    @TimeDecorator((time) => {
+    @time((time) => {
         console.log(`Execution time: ${time}ms`);
     })
     anotherMethod() {
@@ -61,14 +61,14 @@ npm test
 ### Example Test
 
 ```typescript
-import { TimeDecorator } from './index';
+import { time } from './index';
 
-describe('TimeDecorator', () => {
+describe('time', () => {
     it('should measure execution time', () => {
         let loggedTime = 0;
 
         class TestClass {
-            @TimeDecorator((time) => {
+            @time((time) => {
                 loggedTime = time;
             })
             testMethod() {
