@@ -60,7 +60,8 @@ export function time(
 		_target: unknown,
 		key: string | symbol,
 		descriptor: PropertyDescriptor,
-	): unknown {
+		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	): any {
 		if (!descriptor || !descriptor.value) {
 			throw new Error(DECORATOR_ONLLY_METHOD_ERROR);
 		}
