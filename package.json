@@ -1,6 +1,7 @@
 {
 	"version": "0.0.1",
-	"name": "ts-time-decorator",
+	"name": "execution-time-decorator",
+	"private": false,
 	"description": "A TypeScript decorator for measuring the execution time of functions.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -30,5 +31,17 @@
 	"keywords": ["typescript", "decorator", "performance", "benchmark", "time"],
 	"author": "Poorshad Shaddel",
 	"type": "module",
-	"license": "MIT"
+	"license": "MIT",
+	"publishConfig": {
+		"name": "execution-time-decorator",
+		"version": "0.0.1",
+		"main": "dist/index.js",
+		"types": "dist/index.d.ts",
+		"files": [
+			"dist"
+		],
+		"publishConfig": {
+			"access": "public"
+		}
+	}
 }
