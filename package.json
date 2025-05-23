@@ -1,6 +1,6 @@
 {
-	"version": "0.0.1",
-	"name": "@poorshad/time",
+	"version": "1.0.0",
+	"name": "@pshaddel/time",
 	"private": false,
 	"description": "A TypeScript decorator for measuring the execution time of functions.",
 	"main": "dist/index.js",
