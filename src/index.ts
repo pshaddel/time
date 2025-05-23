@@ -12,8 +12,10 @@ type LoggerFunction = (
 	 * }
 	 * ```
 	 */
-	timeTaken: number) => any;
-const DECORATOR_ONLLY_METHOD_ERROR = "The @time decorator can only be used on methods.";
+	timeTaken: number,
+) => any;
+const DECORATOR_ONLLY_METHOD_ERROR =
+	"The @time decorator can only be used on methods.";
 /**
  *
  * @param logger - A function that takes the time taken by the function in milliseconds
@@ -57,7 +59,7 @@ export function time(logger?: LoggerFunction): MethodDecorator {
 	return function (
 		_target,
 		key,
-		descriptor: PropertyDescriptor
+		descriptor: PropertyDescriptor,
 		// biome-ignore lint/suspicious/noConfusingVoidType: <explanation>
 	): void | TypedPropertyDescriptor<any> {
 		if (!descriptor || !descriptor.value) {
@@ -77,7 +79,9 @@ export function time(logger?: LoggerFunction): MethodDecorator {
 				if (logger) {
 					logger(timeTaken);
 				} else {
-					console.log(`Time taken by \x1b[36m${String(key)}\x1b[0m: \x1b[33m${timeTaken}\x1b[0m ms`);
+					console.log(
+						`Time taken by \x1b[36m${String(key)}\x1b[0m: \x1b[33m${timeTaken}\x1b[0m ms`,
+					);
 				}
 				return result;
 			};
@@ -99,31 +103,5 @@ export function time(logger?: LoggerFunction): MethodDecorator {
 			};
 			return descriptor as TypedPropertyDescriptor<(...args: any[]) => any>;
 		}
-	}
-};
-
-class Example {
-	@time()
-	async fetchData() {
-		// Simulate a network request
-		await new Promise((resolve) => setTimeout(resolve, 1000));
-		console.log("waiting");
-		await new Promise((resolve) => setTimeout(resolve, 1000));
-		return "Data fetched";
-	}
-
-	@time((timeTaken) => {
-		console.log(`Custom logger: Time taken: ${timeTaken}ms`);
-	})
-	syncMethod() {
-		let sum = 0;
-		// Simulate a synchronous operation
-		for (let i = 0; i < 1e7; i++) {
-			sum += i;
-		}
-		console.log(`Sum: ${sum}`);
-		return "Sync method completed";
-	}
+	};
 }
-
-const example = new Example();
