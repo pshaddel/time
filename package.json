@@ -28,13 +28,7 @@
 		"format-lint": "biome format --write",
 		"format-lint:check": "biome check"
 	},
-	"keywords": [
-		"typescript",
-		"decorator",
-		"performance",
-		"benchmark",
-		"time"
-	],
+	"keywords": ["typescript", "decorator", "performance", "benchmark", "time"],
 	"author": "Poorshad Shaddel",
 	"type": "module",
 	"license": "MIT",
