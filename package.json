@@ -1,5 +1,5 @@
 {
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"name": "@pshaddel/time",
 	"private": false,
 	"description": "A TypeScript decorator for measuring the execution time of functions.",
@@ -18,7 +18,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/pshaddel/ts-time-decorator.git"
+		"url": "https://github.com/pshaddel/time.git"
 	},
 	"scripts": {
 		"build": "tsc",
