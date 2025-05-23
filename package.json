@@ -1,6 +1,6 @@
 {
 	"version": "0.0.1",
-	"name": "execution-time-decorator",
+	"name": "@poorshad/time",
 	"private": false,
 	"description": "A TypeScript decorator for measuring the execution time of functions.",
 	"main": "dist/index.js",
@@ -28,18 +28,17 @@
 		"format-lint": "biome format --write",
 		"format-lint:check": "biome check"
 	},
-	"keywords": ["typescript", "decorator", "performance", "benchmark", "time"],
+	"keywords": [
+		"typescript",
+		"decorator",
+		"performance",
+		"benchmark",
+		"time"
+	],
 	"author": "Poorshad Shaddel",
 	"type": "module",
 	"license": "MIT",
 	"publishConfig": {
-		"name": "execution-time-decorator",
-		"version": "0.0.1",
-		"main": "dist/index.js",
-		"types": "dist/index.d.ts",
-		"files": ["dist"],
-		"publishConfig": {
-			"access": "public"
-		}
+		"registry": "https://npm.pkg.github.com/"
 	}
 }
